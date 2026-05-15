@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Mōne — Brand Identity</title>
+<meta name="viewport" content="width=1440" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #F2EDE4;
+    --ink: #0E0E0E;
+    --moka: #7B6A56;
+    --sable: #C6AE89;
+    --paper: #FAF7F0;
+    --hairline: rgba(14,14,14,.16);
+    --mute: rgba(14,14,14,.55);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Manrope',ui-sans-serif,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    transition:background .4s ease, color .4s ease;
+  }
+  .serif{font-family:'Cormorant Garamond', serif; font-weight:400}
+  .mono{font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:400}
+
+  .meta{font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--mute)}
+  .eyebrow{font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--mute)}
+
+  .hairline{border-top:.5px solid var(--hairline)}
+  .v-hairline{border-left:.5px solid var(--hairline)}
+
+  /* Wordmark base */
+  .wordmark{font-family:'Cormorant Garamond', serif; font-weight:400; letter-spacing:-.01em; line-height:.9}
+
+  /* Page frame */
+  .frame{max-width:1440px;margin:0 auto;padding:0 56px}
+  .section{padding:96px 0;border-top:.5px solid var(--hairline)}
+  .section:first-of-type{border-top:0}
+
+  /* Section header */
+  .sec-h{display:grid;grid-template-columns:120px 1fr 280px;gap:48px;align-items:end;margin-bottom:56px}
+  .sec-h .num{font-family:'JetBrains Mono', monospace;font-size:11px;letter-spacing:.14em;color:var(--mute)}
+  .sec-h h2{font-family:'Cormorant Garamond', serif;font-weight:300;font-size:72px;line-height:.95;margin:0;letter-spacing:-.02em}
+  .sec-h p{font-size:13px;line-height:1.55;color:var(--mute);margin:0;max-width:32ch}
+
+  /* Top strip */
+  .top{display:flex;justify-content:space-between;align-items:center;padding:24px 56px;border-bottom:.5px solid var(--hairline)}
+  .top .left,.top .right{display:flex;gap:32px}
+  .top span{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+
+  /* HERO */
+  .hero{padding:112px 0 128px}
+  .hero-tag{display:flex;justify-content:space-between;align-items:center;margin-bottom:80px}
+  .hero-tag .l{font-family:'Cormorant Garamond', serif;font-style:italic;font-weight:300;font-size:18px;color:var(--ink);opacity:.7}
+  .hero-mark{font-family:'Cormorant Garamond', serif; font-weight:300; font-size:clamp(220px, 26vw, 380px); line-height:.82; letter-spacing:-.04em; text-align:center; color:var(--ink); position:relative;}
+  .hero-sub{display:flex;justify-content:space-between;align-items:start;margin-top:64px;gap:64px}
+  .hero-sub .col{flex:1}
+  .hero-sub h3{font-family:'Cormorant Garamond',serif; font-weight:300; font-size:28px; line-height:1.15; margin:0 0 10px; letter-spacing:-.01em}
+  .hero-sub p{font-size:13px; line-height:1.6; color:var(--mute); margin:0; max-width:42ch}
+
+  /* Logo lockups */
+  .lockups{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+  .card{background:var(--paper);border:.5px solid var(--hairline);border-radius:2px;padding:48px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:background .4s}
+  .card .tag{position:absolute;top:16px;left:18px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+  .card .tag.r{left:auto;right:18px}
+  .card-center{display:flex;align-items:center;justify-content:center;flex:1;padding:24px 0}
+
+  .lockup-primary{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:128px;line-height:.85;letter-spacing:-.03em;text-align:center}
+  .lockup-primary .sub{display:block;font-family:'Manrope',sans-serif;font-weight:500;font-size:11px;letter-spacing:.42em;margin-top:18px;color:var(--ink)}
+
+  .lockup-horiz{display:flex;align-items:center;gap:18px}
+  .lockup-horiz .name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:72px;line-height:.85;letter-spacing:-.03em}
+  .lockup-horiz .div{width:1px;height:46px;background:var(--ink);opacity:.4}
+  .lockup-horiz .info{font-family:'Manrope',sans-serif;font-weight:500;font-size:10px;letter-spacing:.32em;line-height:1.7;color:var(--ink);text-transform:uppercase}
+
+  .monogram{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:200px;line-height:1;letter-spacing:-.05em;position:relative}
+  .monogram .dot{position:absolute;font-size:.18em;letter-spacing:0;font-weight:300}
+
+  /* dark card */
+  .card.dark{background:var(--ink);color:var(--paper)}
+  .card.dark .tag{color:rgba(250,247,240,.55)}
+  .card.dark .lockup-horiz .div{background:var(--paper)}
+
+  .card.sable{background:var(--sable)}
+
+  /* Palette */
+  .palette{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:.5px solid var(--hairline)}
+  .swatch{aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:space-between;padding:24px;border-right:.5px solid var(--hairline);position:relative}
+  .swatch:last-child{border-right:0}
+  .swatch .name{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:32px;line-height:1;letter-spacing:-.01em}
+  .swatch .meta-row{display:flex;flex-direction:column;gap:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+  .swatch.s-ink{color:var(--paper)}
+  .swatch.s-moka{color:var(--paper)}
+  .swatch.s-sable{color:var(--ink)}
+  .swatch.s-cream{color:var(--ink)}
+  .swatch .num{position:absolute;top:24px;right:24px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;opacity:.55}
+
+  /* Typography spec */
+  .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:.5px solid var(--hairline)}
+  .type-block{padding:48px;border-right:.5px solid var(--hairline);min-height:420px;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);transition:background .4s}
+  .type-block:last-child{border-right:0}
+  .type-block .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+  .type-block .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .type-sample{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:120px;line-height:.92;letter-spacing:-.025em;margin:0}
+  .type-sample.it{font-style:italic;font-weight:300}
+  .type-sample.sans{font-family:'Manrope',sans-serif;font-weight:400;font-size:64px;letter-spacing:-.015em}
+  .type-spec{display:flex;gap:32px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+  .type-glyphs{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:42px;line-height:1.1;letter-spacing:.02em;color:var(--mute)}
+  .type-glyphs.sans{font-family:'Manrope',sans-serif;font-size:24px;letter-spacing:.02em}
+
+  /* Scale row */
+  .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:24px;border:.5px solid var(--hairline);border-top:0}
+  .scale .step{padding:24px;border-right:.5px solid var(--hairline);background:var(--paper)}
+  .scale .step:last-child{border-right:0}
+  .scale .step .v{font-family:'Cormorant Garamond',serif;font-weight:300;display:block;line-height:.95;color:var(--ink)}
+  .scale .step .l{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:14px;display:block}
+
+  /* Motif */
+  .motif-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+  .motif-card{background:var(--paper);border:.5px solid var(--hairline);padding:0;min-height:480px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;transition:background .4s}
+  .motif-card .pad{padding:24px 32px;display:flex;justify-content:space-between;align-items:center}
+  .motif-art{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+
+  /* Diacritic motif - the macron */
+  .motif-macron svg{width:80%;height:auto}
+
+  /* Pattern - repeating M monogram */
+  .pat-card{background:var(--ink);color:var(--paper);min-height:480px}
+  .pattern{position:absolute;inset:0;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(6,1fr);opacity:.92}
+  .pattern span{display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:42px;color:var(--paper);opacity:.18}
+  .pattern span:nth-child(odd){opacity:.32}
+  .pattern span.bright{opacity:.85;color:var(--sable)}
+
+  /* Mockups */
+  .mock-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .mock{background:var(--paper);border:.5px solid var(--hairline);min-height:340px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:background .4s}
+  .mock .tag{position:absolute;top:16px;left:18px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase;z-index:3}
+  .mock .body{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+
+  /* Business card */
+  .bcard{background:var(--paper);width:78%;aspect-ratio:1.72/1;box-shadow:0 24px 48px -24px rgba(14,14,14,.22), 0 2px 0 var(--hairline);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;border-radius:1px;position:relative}
+  .bcard .mark{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:46px;line-height:.9;letter-spacing:-.02em}
+  .bcard .info{display:flex;justify-content:space-between;align-items:end;font-family:'JetBrains Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+  .bcard .info .col{display:flex;flex-direction:column;gap:2px}
+
+  .bcard.back{background:var(--ink);color:var(--paper);align-items:center;justify-content:center}
+  .bcard.back .mono-mark{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:120px;line-height:1;letter-spacing:-.04em;color:var(--paper)}
+
+  /* Coffee cup */
+  .cup{width:62%;aspect-ratio:1/1.25;background:var(--paper);border-radius:50% 50% 6px 6px / 6% 6% 4px 4px;position:relative;box-shadow:inset 0 6px 0 #ECE6D6, 0 24px 48px -24px rgba(14,14,14,.22);overflow:hidden}
+  .cup::before{content:"";position:absolute;left:0;right:0;top:14%;bottom:18%;background:linear-gradient(180deg, transparent, transparent 92%, rgba(14,14,14,.06))}
+  .cup .band{position:absolute;left:0;right:0;top:36%;height:32%;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--paper);gap:6px}
+  .cup .band .nm{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:46px;line-height:.85;letter-spacing:-.02em}
+  .cup .band .sb{font-family:'Manrope',sans-serif;font-weight:500;font-size:7.5px;letter-spacing:.4em;text-transform:uppercase}
+  .cup .lid{position:absolute;left:-4%;right:-4%;top:-3%;height:10%;background:#1A1A1A;border-radius:50% 50% 0 0/ 60% 60% 0 0}
+
+  /* Paper bag */
+  .bag{width:64%;aspect-ratio:.78/1;background:#E4D8BE;position:relative;box-shadow:0 24px 48px -24px rgba(14,14,14,.22);overflow:hidden}
+  .bag::before{content:"";position:absolute;left:0;right:0;top:0;height:14%;background:linear-gradient(180deg, rgba(14,14,14,.18), rgba(14,14,14,0));}
+  .bag::after{content:"";position:absolute;left:0;right:0;top:13%;height:1px;background:rgba(14,14,14,.18)}
+  .bag .label{position:absolute;left:14%;right:14%;top:32%;background:var(--paper);padding:24px 18px;display:flex;flex-direction:column;align-items:center;gap:6px;border:.5px solid rgba(14,14,14,.12)}
+  .bag .label .nm{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:42px;line-height:.85;letter-spacing:-.02em}
+  .bag .label .sb{font-family:'Manrope',sans-serif;font-weight:500;font-size:7.5px;letter-spacing:.36em;text-transform:uppercase}
+  .bag .label .div{width:24px;height:.5px;background:var(--ink);margin:4px 0}
+  .bag .label .ad{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+
+  /* Menu cover */
+  .menu{width:62%;aspect-ratio:.7/1;background:var(--paper);box-shadow:0 24px 48px -24px rgba(14,14,14,.22);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:28px 22px}
+  .menu .top{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  .menu .mid{text-align:center}
+  .menu .mid .nm{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:78px;line-height:.85;letter-spacing:-.03em}
+  .menu .mid .sb{font-family:'Manrope',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.4em;text-transform:uppercase;margin-top:14px;color:var(--ink)}
+  .menu .mid .it{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:18px;color:var(--moka);margin-top:18px}
+  .menu .bot{text-align:center;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+
+  /* Awning / facade */
+  .facade{width:84%;aspect-ratio:1.6/1;position:relative;background:linear-gradient(180deg, #F0E7D2 0%, #EDE3CB 100%);box-shadow:0 24px 48px -24px rgba(14,14,14,.22);overflow:hidden}
+  .facade .awning{position:absolute;left:8%;right:8%;top:18%;height:24%;background:var(--ink);clip-path:polygon(0 0, 100% 0, 96% 100%, 4% 100%)}
+  .facade .awning .nm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--paper);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:48px;letter-spacing:-.02em;line-height:.9}
+  .facade .window{position:absolute;left:14%;right:14%;top:50%;bottom:8%;background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.2));border:.5px solid rgba(14,14,14,.2)}
+  .facade .door{position:absolute;left:46%;right:46%;top:54%;bottom:8%;background:rgba(14,14,14,.7)}
+
+  /* Stamp */
+  .stamp{width:54%;aspect-ratio:1/1;border-radius:50%;border:.5px solid var(--ink);position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;background:var(--paper)}
+  .stamp .ring{position:absolute;inset:8%;border-radius:50%;border:.5px solid var(--ink);opacity:.4}
+  .stamp .nm{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:56px;line-height:.85;letter-spacing:-.02em;z-index:2}
+  .stamp .sb{font-family:'Manrope',sans-serif;font-weight:600;font-size:8px;letter-spacing:.42em;text-transform:uppercase;margin-top:10px;z-index:2}
+  .stamp .yr{position:absolute;bottom:14%;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.18em;color:var(--mute)}
+  .stamp .top-arc{position:absolute;top:14%;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--mute)}
+
+  /* Voice */
+  .voice-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:.5px solid var(--hairline);background:var(--paper);transition:background .4s}
+  .voice-card{padding:40px;border-right:.5px solid var(--hairline);min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+  .voice-card:last-child{border-right:0}
+  .voice-card .head{display:flex;justify-content:space-between;align-items:baseline}
+  .voice-card .head .ti{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;font-size:28px;line-height:1}
+  .voice-card .head .nu{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--mute)}
+  .voice-card .ph{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:30px;line-height:1.15;letter-spacing:-.01em;margin:0}
+  .voice-card .ph em{font-style:italic;font-weight:400;color:var(--moka)}
+
+  /* Footer */
+  footer{padding:48px 56px;border-top:.5px solid var(--hairline);display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+
+  /* hide tweaks area until needed */
+  #root{min-height:100vh}
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
